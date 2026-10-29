@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CKV</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+<script src="styles.js"></script><script src="engine.js"></script><script src="components.js"></script><script src="cinematic.js"></script><script src="shots.js"></script>
+</head><body><canvas id="c"></canvas>
+<script>
+/* Preview: open index.html?sb=../path/storyboard.json via a local static server, or let render.cjs inject. */
+window.CKV_BOOT = async function (sb, images, fonts) {
+  window.CKV.images = {};
+  for (const [k, url] of Object.entries(images || {})) {
+    await new Promise((res, reject) => { const im = new Image(); im.onload = () => { window.CKV.images[k] = im; res(); }; im.onerror = () => reject(new Error('Image failed: ' + url)); im.src = url; });
+  }
+  for (const f of fonts || []) { const face = await new FontFace(f.family, f.source, {weight:f.weight}).load(); document.fonts.add(face); }
+  return window.CKV.init(sb, document.getElementById('c'));
+};
+</script></body></html>

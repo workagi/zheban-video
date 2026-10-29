@@ -1,0 +1,219 @@
+{
+  "title": "三种镜头的一致性测试",
+  "slug": "consistency-pilot",
+  "productionMode": "stable",
+  "format": "landscape",
+  "style": "noir-gold",
+  "fps": 30,
+  "seed": "consistency-v1",
+  "duration": 12,
+  "hook": "先合作，最后看总分",
+  "fadeOut": 0.3,
+  "autoSfx": true,
+  "music": {
+    "mode": "synth",
+    "bpm": 120,
+    "gain": 0.32
+  },
+  "fontFiles": [
+    {
+      "family": "Noto Serif CJK SC",
+      "path": "assets/fonts/NotoSerifSC-VF.ttf",
+      "weight": "200 900"
+    }
+  ],
+  "narration": {
+    "timeline": "narration-timeline.json",
+    "musicDuck": 0.23
+  },
+  "informationPoints": [
+    {
+      "id": "p0",
+      "claim": "比较规则和结果",
+      "source": "facts.md"
+    },
+    {
+      "id": "p1",
+      "claim": "第一轮合作，之后复制对方上一轮",
+      "source": "facts.md"
+    },
+    {
+      "id": "p2",
+      "claim": "虚构得分甲90乙70丙60丁40",
+      "source": "facts.md"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "durationSec": 4,
+      "turn": "解释",
+      "layout": "center",
+      "camera": "still",
+      "transition": "cut",
+      "textBed": false,
+      "visual": {
+        "type": "shot",
+        "name": "medal-reveal",
+        "params": {
+          "headline": [
+            "先看规则，",
+            "再看总分"
+          ],
+          "subline": "先合作 · 再回应 · 比总分",
+          "emblem": "冠",
+          "variant": "split",
+          "event": "reveal"
+        }
+      },
+      "events": [
+        {
+          "id": "reveal",
+          "at": 0.2,
+          "duration": 0.7
+        }
+      ],
+      "lines": [
+        {
+          "role": "caption",
+          "text": "先看规则，再看最后的排名",
+          "atSec": 0.2,
+          "outSec": 3.8
+        }
+      ],
+      "explanations": [
+        {
+          "id": "ex0",
+          "line": "line0",
+          "point": "p0",
+          "kind": "reveal",
+          "evidence": "奖章与标题提示比较问题，不宣称真实冠军"
+        }
+      ],
+      "staging": "anticipate"
+    },
+    {
+      "id": "rule",
+      "durationSec": 4,
+      "turn": "解释",
+      "layout": "center",
+      "camera": "still",
+      "transition": "cut",
+      "textBed": false,
+      "visual": {
+        "type": "shot",
+        "name": "lag-copy",
+        "params": {
+          "headline": "复制对方上一轮",
+          "opponent": [
+            "C",
+            "D",
+            "D",
+            "C"
+          ],
+          "initial": "C",
+          "stepSeconds": 0.6,
+          "variant": "wide",
+          "event": "reveal"
+        }
+      },
+      "events": [
+        {
+          "id": "reveal",
+          "at": 0.2,
+          "duration": 0.7
+        }
+      ],
+      "lines": [
+        {
+          "role": "caption",
+          "text": "先合作，再复制对方上一轮",
+          "atSec": 0.2,
+          "outSec": 3.8
+        }
+      ],
+      "explanations": [
+        {
+          "id": "ex1",
+          "line": "line1",
+          "point": "p1",
+          "kind": "mechanism",
+          "evidence": "对手C,D,D,C；我方C,C,D,D；箭头只连上一轮到下一轮"
+        }
+      ],
+      "staging": "explain"
+    },
+    {
+      "id": "rank",
+      "durationSec": 4,
+      "turn": "解释",
+      "layout": "center",
+      "camera": "still",
+      "transition": "cut",
+      "textBed": false,
+      "visual": {
+        "type": "shot",
+        "name": "ranking",
+        "params": {
+          "headline": "总分最高的是甲",
+          "items": [
+            {
+              "id": "B",
+              "label": "乙",
+              "value": 70,
+              "source": "fixture-rank"
+            },
+            {
+              "id": "A",
+              "label": "甲",
+              "value": 90,
+              "source": "fixture-rank"
+            },
+            {
+              "id": "D",
+              "label": "丁",
+              "value": 40,
+              "source": "fixture-rank"
+            },
+            {
+              "id": "C",
+              "label": "丙",
+              "value": 60,
+              "source": "fixture-rank"
+            }
+          ],
+          "unit": "分",
+          "note": "虚构数据 · 仅验证排序与同一尺度",
+          "variant": "columns",
+          "event": "reveal"
+        }
+      },
+      "events": [
+        {
+          "id": "reveal",
+          "at": 0.2,
+          "duration": 0.7
+        }
+      ],
+      "lines": [
+        {
+          "role": "caption",
+          "text": "同一尺度，甲的总分最高",
+          "atSec": 0.2,
+          "outSec": 3.8
+        }
+      ],
+      "explanations": [
+        {
+          "id": "ex2",
+          "line": "line2",
+          "point": "p2",
+          "kind": "comparison",
+          "evidence": "四根柱子共用零基线，按90,70,60,40降序；教学虚构数据"
+        }
+      ],
+      "staging": "reveal"
+    }
+  ],
+  "sfxGain": 0.4
+}

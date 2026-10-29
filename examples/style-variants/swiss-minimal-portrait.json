@@ -1,0 +1,383 @@
+{
+ "title": "囚徒困境：为什么聪明人会选择背叛",
+ "format": "portrait",
+ "style": "swiss-minimal",
+ "fps": 30,
+ "duration": 60,
+ "seed": "prisoners-dilemma",
+ "hook": "为什么聪明人，总会选择背叛？",
+ "seal": "弈",
+ "music": {
+  "mode": "synth",
+  "bpm": 120,
+  "beatsPerBar": 4
+ },
+ "turnMax": 15,
+ "scenes": [
+  {
+   "id": "hook",
+   "bars": 1,
+   "layout": "center",
+   "energy": 0.7,
+   "turn": "钩子",
+   "visual": {
+    "type": "rings",
+    "scale": 0.46
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "type": "impact"
+    }
+   ],
+   "lines": [
+    {
+     "role": "kicker",
+     "text": "1950 · 兰德公司"
+    },
+    {
+     "role": "title",
+     "text": "背叛，才是[[最优解]]？"
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "bars": 4,
+   "layout": "top",
+   "energy": 0.35,
+   "visual": {
+    "type": "duo",
+    "labels": [
+     "囚徒 A",
+     "囚徒 B"
+    ],
+    "states": [
+     {
+      "at": 0,
+      "state": "wall"
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "type": "whoosh"
+    },
+    {
+     "at": 8,
+     "type": "tick"
+    }
+   ],
+   "lines": [
+    {
+     "role": "title",
+     "text": "两个同伙，被分开审讯",
+     "at": 0.5
+    },
+    {
+     "role": "caption",
+     "text": "不能串供，只能猜对方会怎么做。",
+     "at": 1.5,
+     "out": 8
+    },
+    {
+     "role": "caption",
+     "text": "都沉默，各判1年；有人揭发，他就走。",
+     "at": 8.5,
+     "out": 15.5
+    }
+   ]
+  },
+  {
+   "id": "matrix",
+   "bars": 3,
+   "layout": "top",
+   "energy": 0.5,
+   "turn": "你猜？",
+   "visual": {
+    "type": "matrix",
+    "at": 1,
+    "rows": [
+     "A 沉默",
+     "A 揭发"
+    ],
+    "cols": [
+     "B 沉默",
+     "B 揭发"
+    ],
+    "cells": [
+     [
+      "各判 1 年",
+      "A 10年 · B 释放"
+     ],
+     [
+      "A 释放 · B 10年",
+      "各判 5 年"
+     ]
+    ],
+    "stagger": 0.5,
+    "highlight": [
+     {
+      "cell": [
+       1,
+       1
+      ],
+      "at": 6.5
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "type": "riser_end"
+    },
+    {
+     "at": 6.5,
+     "type": "impact"
+    }
+   ],
+   "lines": [
+    {
+     "role": "title",
+     "text": "你猜，他们会怎么选？",
+     "at": 0.25
+    },
+    {
+     "role": "caption",
+     "text": "无论对方怎么选，揭发都划算。",
+     "at": 6.5
+    }
+   ]
+  },
+  {
+   "id": "nash",
+   "bars": 3,
+   "layout": "top",
+   "energy": 0.45,
+   "visual": {
+    "type": "split",
+    "left": {
+     "title": "个人理性",
+     "sub": "每个人都选揭发"
+    },
+    "right": {
+     "title": "集体结果",
+     "sub": "两人各判 5 年"
+    },
+    "winner": "right",
+    "winAt": 5,
+    "at": 1
+   },
+   "sfx": [
+    {
+     "at": 5,
+     "type": "ding"
+    }
+   ],
+   "lines": [
+    {
+     "role": "kicker",
+     "text": "纳什均衡",
+     "at": 0.25
+    },
+    {
+     "role": "title",
+     "text": "聪明，把两个人都送进了牢里",
+     "at": 0.5
+    },
+    {
+     "role": "caption",
+     "text": "本来，他们可以各判一年。",
+     "at": 6
+    }
+   ]
+  },
+  {
+   "id": "rand",
+   "bars": 4,
+   "layout": "left",
+   "energy": 0.6,
+   "turn": "转折",
+   "visual": {
+    "type": "bignum",
+    "from": 0,
+    "to": 60,
+    "at": 2,
+    "len": 6,
+    "suffix": " / 100",
+    "label": "轮里，两人同时选择了合作"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "type": "impact"
+    },
+    {
+     "at": 8,
+     "type": "ding"
+    }
+   ],
+   "lines": [
+    {
+     "role": "kicker",
+     "text": "1950 年 · 真实实验",
+     "at": 0.25
+    },
+    {
+     "role": "title",
+     "text": "可当两位专家\n连玩 100 轮——",
+     "at": 0.5
+    },
+    {
+     "role": "sub",
+     "text": "他们一次次[[放弃了背叛]]",
+     "at": 7
+    },
+    {
+     "role": "note",
+     "text": "来源：Flood & Dresher, RAND, 1950（Alchian 与 Williams 对局）",
+     "at": 2,
+     "src": "flood-dresher"
+    }
+   ]
+  },
+  {
+   "id": "tournament",
+   "bars": 4,
+   "layout": "right",
+   "energy": 0.65,
+   "turn": "悬念",
+   "visual": {
+    "type": "code",
+    "at": 3,
+    "per": 1.4,
+    "lines": [
+     "第一轮：选择合作",
+     "之后：你上一轮怎么对我，",
+     "　　　我这一轮就怎么对你"
+    ],
+    "highlight": 0,
+    "highlightAt": 10
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "type": "whoosh"
+    },
+    {
+     "at": 3,
+     "type": "type"
+    },
+    {
+     "at": 10,
+     "type": "ding"
+    }
+   ],
+   "lines": [
+    {
+     "role": "kicker",
+     "text": "1980 年 · 阿克塞尔罗德锦标赛",
+     "at": 0.25
+    },
+    {
+     "role": "title",
+     "text": "14 个程序，\n两两对战 200 轮",
+     "at": 0.5
+    },
+    {
+     "role": "sub",
+     "text": "冠军，是[[最简单]]的那个",
+     "at": 8
+    },
+    {
+     "role": "note",
+     "text": "来源：Axelrod, Journal of Conflict Resolution, 1980",
+     "at": 2,
+     "src": "axelrod-1980"
+    }
+   ]
+  },
+  {
+   "id": "tft",
+   "bars": 5,
+   "layout": "bottom",
+   "energy": 0.8,
+   "turn": "揭晓",
+   "visual": {
+    "type": "dots",
+    "n": 120,
+    "frac": 0.3,
+    "at": 0,
+    "evolve": [
+     {
+      "at": 4,
+      "frac": 0.86,
+      "len": 10
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "type": "impact"
+    },
+    {
+     "at": 12,
+     "type": "ding"
+    }
+   ],
+   "lines": [
+    {
+     "role": "title",
+     "text": "以牙还牙",
+     "at": 0.5
+    },
+    {
+     "role": "sub",
+     "text": "先善意，可回击，肯原谅",
+     "at": 2.5
+    },
+    {
+     "role": "caption",
+     "text": "第二届 62 个程序专门针对它，它仍夺冠。",
+     "at": 9,
+     "src": "axelrod-1980b"
+    }
+   ]
+  },
+  {
+   "id": "ending",
+   "bars": 6,
+   "layout": "center",
+   "energy": 0.4,
+   "turn": "落点",
+   "ending": true,
+   "visual": {
+    "type": "network",
+    "n": 22,
+    "at": 0,
+    "len": 14
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "type": "swell"
+    }
+   ],
+   "lines": [
+    {
+     "role": "quote",
+     "text": "人生不是一局，\n而是无数局。",
+     "at": 0.5,
+     "out": 11
+    },
+    {
+     "role": "quote",
+     "text": "所以，[[先伸出手]]。",
+     "at": 12
+    }
+   ]
+  }
+ ]
+}

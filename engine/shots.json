@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "verifiedFormats": [
+    "landscape"
+  ],
+  "verifiedStyles": [
+    "noir-gold"
+  ],
+  "shots": {
+    "medal-reveal": {
+      "label": "奖章揭晓",
+      "holdSeconds": 1.0,
+      "fields": {
+        "headline": {
+          "kind": "list",
+          "min": 1,
+          "max": 2,
+          "required": true,
+          "item": {
+            "kind": "text",
+            "max": 12,
+            "required": false
+          }
+        },
+        "subline": {
+          "kind": "text",
+          "max": 24,
+          "required": false,
+          "default": "",
+          "min": 0
+        },
+        "emblem": {
+          "kind": "text",
+          "max": 2,
+          "required": false,
+          "default": "冠"
+        },
+        "variant": {
+          "kind": "enum",
+          "choices": [
+            "split",
+            "center"
+          ],
+          "default": "split"
+        },
+        "event": {
+          "kind": "text",
+          "max": 64,
+          "required": false
+        }
+      }
+    },
+    "lag-copy": {
+      "label": "上一轮复制",
+      "holdSeconds": 0.8,
+      "fields": {
+        "headline": {
+          "kind": "text",
+          "max": 24,
+          "required": true
+        },
+        "opponent": {
+          "kind": "list",
+          "min": 3,
+          "max": 8,
+          "required": true,
+          "item": {
+            "kind": "enum",
+            "choices": [
+              "C",
+              "D"
+            ]
+          }
+        },
+        "initial": {
+          "kind": "enum",
+          "choices": [
+            "C",
+            "D"
+          ],
+          "default": "C"
+        },
+        "opponentLabel": {
+          "kind": "text",
+          "max": 6,
+          "required": false,
+          "default": "对手"
+        },
+        "ownLabel": {
+          "kind": "text",
+          "max": 6,
+          "required": false,
+          "default": "我方"
+        },
+        "stepSeconds": {
+          "kind": "number",
+          "min": 0.45,
+          "max": 1.5,
+          "default": 0.6
+        },
+        "variant": {
+          "kind": "enum",
+          "choices": [
+            "wide",
+            "compact"
+          ],
+          "default": "wide"
+        },
+        "event": {
+          "kind": "text",
+          "max": 64,
+          "required": false
+        }
+      }
+    },
+    "ranking": {
+      "label": "排名比较",
+      "holdSeconds": 1.0,
+      "fields": {
+        "headline": {
+          "kind": "text",
+          "max": 24,
+          "required": true
+        },
+        "items": {
+          "kind": "list",
+          "min": 2,
+          "max": 15,
+          "required": true,
+          "item": {
+            "kind": "record",
+            "fields": {
+              "id": {
+                "kind": "text",
+                "max": 32,
+                "required": true
+              },
+              "label": {
+                "kind": "text",
+                "max": 6,
+                "required": true
+              },
+              "value": {
+                "kind": "number",
+                "min": 0,
+                "max": 1000000000.0,
+                "required": true
+              },
+              "source": {
+                "kind": "text",
+                "max": 100,
+                "required": true
+              }
+            }
+          }
+        },
+        "unit": {
+          "kind": "text",
+          "max": 12,
+          "required": false,
+          "default": "分"
+        },
+        "note": {
+          "kind": "text",
+          "max": 45,
+          "required": false,
+          "default": "",
+          "min": 0
+        },
+        "variant": {
+          "kind": "enum",
+          "choices": [
+            "columns",
+            "horizontal"
+          ],
+          "default": "columns"
+        },
+        "event": {
+          "kind": "text",
+          "max": 64,
+          "required": false
+        }
+      }
+    }
+  },
+  "styleOverrides": {
+    "overlay": {
+      "grain": 0.032,
+      "vignette": 0.5
+    }
+  },
+  "stagingProfiles": {
+    "anticipate": {
+      "energy": 0.25,
+      "dust": 0.55,
+      "bokeh": 0.55,
+      "key": 0.4,
+      "flash": 0
+    },
+    "explain": {
+      "energy": 0.5,
+      "dust": 0.55,
+      "bokeh": 0.5,
+      "key": 0.6,
+      "flash": 0
+    },
+    "reveal": {
+      "energy": 0.85,
+      "dust": 1,
+      "bokeh": 1,
+      "key": 1,
+      "flash": 0.18
+    },
+    "resolve": {
+      "energy": 0.35,
+      "dust": 0.7,
+      "bokeh": 0.65,
+      "key": 0.5,
+      "flash": 0
+    }
+  }
+}

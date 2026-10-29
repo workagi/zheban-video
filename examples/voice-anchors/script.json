@@ -1,0 +1,15 @@
+{
+  "provider": "edge-tts",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "+0%",
+  "pitch": "-3Hz",
+  "leadIn": 0.6,
+  "gap": 0.25,
+  "tail": 1,
+  "lines": [
+    {
+      "id": "reflection",
+      "text": "光线照到镜面上，入射角等于反射角。"
+    }
+  ]
+}

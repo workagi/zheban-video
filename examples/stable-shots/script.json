@@ -1,0 +1,26 @@
+{
+  "provider": "edge-tts",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "+8%",
+  "pitch": "-3Hz",
+  "tail": 0.3,
+  "lines": [
+    {
+      "id": "line0",
+      "text": "先看规则，再看最后的排名。",
+      "at": 0.2
+    },
+    {
+      "id": "line1",
+      "text": "先合作，再复制对方上一轮。",
+      "at": 4.2
+    },
+    {
+      "id": "line2",
+      "text": "同一尺度，甲的总分最高。",
+      "at": 8.2
+    }
+  ],
+  "leadIn": 0,
+  "gap": 0
+}

@@ -1,0 +1,105 @@
+{
+  "title": "光怎么反射",
+  "slug": "science-voice-test",
+  "format": "landscape",
+  "style": "tech-hud",
+  "fps": 30,
+  "seed": "voice-upgrade-science",
+  "hook": "光怎么反射",
+  "autoSfx": false,
+  "fadeOut": 0.65,
+  "music": {
+    "mode": "none",
+    "bpm": 120
+  },
+  "narration": {
+    "timeline": "narration-timeline.json",
+    "musicDuck": 0.2
+  },
+  "fontFiles": [
+    {
+      "family": "Noto Serif CJK SC",
+      "path": "assets/fonts/NotoSerifSC-VF.ttf",
+      "weight": "200 900"
+    }
+  ],
+  "styleOverrides": {
+    "fonts": {
+      "title": "\"Noto Serif CJK SC\", serif",
+      "body": "\"Noto Serif CJK SC\", serif"
+    },
+    "overlay": {
+      "grain": 0.018
+    }
+  },
+  "informationPoints": [
+    {
+      "id": "point",
+      "claim": "角度相等",
+      "source": "facts.md"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "science",
+      "endAnchor": {
+        "line": "reflection",
+        "edge": "end",
+        "offset": 1.1
+      },
+      "layout": "left",
+      "camera": "still",
+      "turn": "解释",
+      "ending": true,
+      "textBed": false,
+      "visual": {
+        "type": "custom",
+        "name": "science",
+        "preroll": 0
+      },
+      "events": [
+        {
+          "id": "change",
+          "anchor": {
+            "line": "reflection",
+            "word": "反射角"
+          },
+          "duration": 0.65
+        }
+      ],
+      "explanations": [
+        {
+          "id": "explain",
+          "line": "reflection",
+          "point": "point",
+          "kind": "mechanism",
+          "evidence": "法线两侧的入射与反射光线夹角相等；所有角从法线量起"
+        }
+      ],
+      "lines": [
+        {
+          "role": "title",
+          "text": "角度相等",
+          "atSec": 0
+        },
+        {
+          "role": "caption",
+          "text": "光线照到镜面上，入射角等于反射角",
+          "anchor": {
+            "line": "reflection"
+          },
+          "outAnchor": {
+            "line": "reflection",
+            "edge": "end",
+            "offset": 0.45
+          }
+        },
+        {
+          "role": "note",
+          "text": "公开知识 · 机制示意",
+          "atSec": 0
+        }
+      ]
+    }
+  ]
+}

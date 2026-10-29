@@ -1,0 +1,269 @@
+{
+  "title": "单挑没赢，为什么总分第一",
+  "slug": "cinematic-pilot-15s",
+  "format": "landscape",
+  "style": "noir-gold",
+  "fps": 30,
+  "duration": 15,
+  "seed": "cinematic-pilot-v2",
+  "hook": "一局没赢过，凭什么拿冠军？",
+  "fadeOut": 0.55,
+  "music": {
+    "mode": "synth",
+    "bpm": 120,
+    "beatsPerBar": 4,
+    "gain": 0.14,
+    "fadeOut": 1.5
+  },
+  "narration": {
+    "clips": [
+      {
+        "id": "intro",
+        "file": "assets/audio/reference-intro.wav",
+        "at": 0.2,
+        "text": "它一局都没赢过，却拿下了总冠军。",
+        "origin": "用户提供的参考片0.00–3.65秒；保留原混音"
+      },
+      {
+        "id": "explain",
+        "file": "assets/audio/reference-explain.wav",
+        "at": 7.45,
+        "text": "单挑，最多打平。可分数加起来，它第一。",
+        "origin": "用户提供的参考片38.25–42.05秒；保留原混音"
+      }
+    ],
+    "gain": 1.0,
+    "musicDuck": 0.22
+  },
+  "autoSfx": false,
+  "sfxGain": 0.16,
+  "fontFiles": [
+    {
+      "family": "Noto Serif CJK SC",
+      "path": "assets/fonts/NotoSerifSC-VF.ttf",
+      "weight": "200 900"
+    }
+  ],
+  "styleOverrides": {
+    "overlay": {
+      "grain": 0.032,
+      "vignette": 0.5
+    }
+  },
+  "keyframes": [
+    0,
+    2.2,
+    4.1,
+    5.5,
+    7.0,
+    8.8,
+    10.1,
+    11.8,
+    13.8
+  ],
+  "scenes": [
+    {
+      "id": "pilot",
+      "durationSec": 15,
+      "layout": "center",
+      "bg": "pilot",
+      "camera": "still",
+      "textV": 0,
+      "textBed": false,
+      "energy": 0.35,
+      "turn": "单挑与累计得分的反差",
+      "ending": true,
+      "events": [
+        {
+          "id": "question",
+          "duration": 0.8,
+          "anchor": {
+            "clip": "intro",
+            "offset": 0.3
+          }
+        },
+        {
+          "id": "chart",
+          "duration": 0.65,
+          "anchor": {
+            "clip": "explain",
+            "offset": -0.1
+          }
+        },
+        {
+          "id": "chart-heading",
+          "duration": 0.55,
+          "anchor": {
+            "clip": "explain",
+            "offset": 0.25
+          }
+        },
+        {
+          "id": "winner",
+          "duration": 0.5,
+          "anchor": {
+            "clip": "explain",
+            "offset": 3.3
+          }
+        }
+      ],
+      "visual": {
+        "type": "custom",
+        "name": "pilot",
+        "preroll": 0,
+        "data": [
+          {
+            "name": "以牙还牙",
+            "abbr": "TFT",
+            "score": 504.5
+          },
+          {
+            "name": "Tideman & Chieruzzi",
+            "abbr": "T&C",
+            "score": 500.4
+          },
+          {
+            "name": "Nydegger",
+            "abbr": "NYD",
+            "score": 485.5
+          },
+          {
+            "name": "Grofman",
+            "abbr": "GRO",
+            "score": 481.9
+          },
+          {
+            "name": "Shubik",
+            "abbr": "SHU",
+            "score": 480.7
+          },
+          {
+            "name": "Stein & Rapoport",
+            "abbr": "STE",
+            "score": 477.8
+          },
+          {
+            "name": "Friedman",
+            "abbr": "FRI",
+            "score": 473.4
+          },
+          {
+            "name": "Davis",
+            "abbr": "DAV",
+            "score": 471.8
+          },
+          {
+            "name": "Graaskamp",
+            "abbr": "GRA",
+            "score": 400.7
+          },
+          {
+            "name": "Downing",
+            "abbr": "DOW",
+            "score": 390.6
+          },
+          {
+            "name": "Feld",
+            "abbr": "FEL",
+            "score": 327.6
+          },
+          {
+            "name": "Joss",
+            "abbr": "JOS",
+            "score": 304.4
+          },
+          {
+            "name": "Tullock",
+            "abbr": "TUL",
+            "score": 300.5
+          },
+          {
+            "name": "Anonymous",
+            "abbr": "匿名",
+            "score": 282.2
+          },
+          {
+            "name": "Random",
+            "abbr": "RND",
+            "score": 276.3
+          }
+        ]
+      },
+      "lines": [
+        {
+          "role": "caption",
+          "text": "它一局都没赢过，",
+          "atSec": 0,
+          "outSec": 1.95,
+          "src": "f2"
+        },
+        {
+          "role": "caption",
+          "text": "却拿下了总冠军。",
+          "atSec": 1.95,
+          "outSec": 3.95,
+          "src": "f1"
+        },
+        {
+          "role": "caption",
+          "text": "复制对方上一轮。",
+          "atSec": 4.0,
+          "outSec": 7.2,
+          "src": "f2"
+        },
+        {
+          "role": "caption",
+          "text": "单挑，最多打平。",
+          "atSec": 7.3,
+          "outSec": 9.1,
+          "src": "f2"
+        },
+        {
+          "role": "caption",
+          "text": "可把分数加起来——",
+          "atSec": 9.1,
+          "outSec": 10.95,
+          "src": "f1"
+        },
+        {
+          "role": "caption",
+          "text": "它，第一。",
+          "atSec": 10.95,
+          "outSec": 15,
+          "src": "f1"
+        },
+        {
+          "role": "quote",
+          "text": "赢的，是累计得分。",
+          "atSec": 10.95,
+          "outSec": 15,
+          "src": "f1"
+        },
+        {
+          "role": "note",
+          "text": "数据：Axelrod, 1980 附录 · 逐轮选择为规则示意",
+          "atSec": 0,
+          "outSec": 15,
+          "src": "f1"
+        }
+      ],
+      "sfx": [
+        {
+          "type": "whoosh",
+          "at": 14.7,
+          "gain": 0.3
+        },
+        {
+          "type": "impact",
+          "at": 21.5,
+          "gain": 0.3
+        },
+        {
+          "type": "ding",
+          "at": 22.2,
+          "gain": 0.18
+        }
+      ]
+    }
+  ]
+}
